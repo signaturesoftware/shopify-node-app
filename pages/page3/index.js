@@ -1,8 +1,8 @@
 import { Heading, Page } from "@shopify/polaris";
-import { TitleBar, Button, Redirect } from '@shopify/app-bridge/actions';
+import { TitleBar, Redirect, Button } from '@shopify/app-bridge/actions';
 import { useAppBridge } from "@shopify/app-bridge-react";
 
-const Index = () => {
+const Page3 = () => {
   const app = useAppBridge();
   const breadcrumb = Button.create(app, { label: 'My breadcrumb' });
   breadcrumb.subscribe(Button.Action.CLICK, () => {
@@ -10,18 +10,17 @@ const Index = () => {
   });
 
   const titleBarOptions = {
-    title: 'Dashboard',
+    title: 'Page 3',
     //breadcrumbs: breadcrumb
   };
 
   TitleBar.create(app, titleBarOptions);
 
-
   return (
-  <Page>
-    <Heading>Shopify app with Node and React 🎉</Heading>
-  </Page>
+    <Page>
+      <Heading>Page 3</Heading>
+    </Page>
   );
 }
 
-export default Index;
+export default Page3;
